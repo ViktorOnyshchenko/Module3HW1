@@ -124,9 +124,15 @@ namespace Homework1
 
         public IEnumerator<TEntity> GetEnumerator()
         {
+            int counter = 1;
             foreach (var item in entities)
             {
+                if(counter == count)
+                {
+                    yield break;
+                }
                 yield return item;
+                counter++;
             }
         }
 
