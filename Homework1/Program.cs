@@ -14,17 +14,17 @@ namespace Homework1
             list.Add(6);
             PrintList(list);
             int[] array = { 7, 8, 9, 10, 11 };
-            Console.Write($"AddRange: ");
+            Console.Write($"\nAddRange: ");
             array.ToList().ForEach(number => Console.Write($"{number} "));
             Console.WriteLine();
             list.AddRange(array);
             PrintList(list);
             int value = 6;
-            Console.WriteLine($"Remove {value}:");
+            Console.WriteLine($"\nRemove {value}:");
             list.Remove(value);
             PrintList(list);
             int index = 3;
-            Console.WriteLine($"RemoveAt {index}:");
+            Console.WriteLine($"\nRemoveAt {index}:");
             try
             {
                 list.RemoveAt(index);
@@ -34,7 +34,7 @@ namespace Homework1
                 Console.WriteLine(ex.Message);
             }
             PrintList(list);
-            Console.WriteLine("Sort:");
+            Console.WriteLine("\nSort:");
             list.Sort();
             PrintList(list);
             Console.ReadKey();
@@ -45,7 +45,7 @@ namespace Homework1
             {
                 Console.Write($"{item} ");
             }
-            Console.WriteLine($"\n{list.Count} {list.Capacity}");
+            Console.WriteLine($"\nCount: {list.Count} Capacity: {list.Capacity}");
         }
     }
 }
