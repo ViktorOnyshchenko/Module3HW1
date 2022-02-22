@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Linq;
 
@@ -37,9 +38,25 @@ namespace Homework1
             Console.WriteLine("\nSort:");
             list.Sort();
             PrintList(list);
+
+            MyList<string> listStr = new MyList<string>(new string[5] { "Max", "Ilita", "Yarik", "Serega", "Mykola" });
+            Console.WriteLine("\nSort:");
+            PrintList(list);
+            listStr.Sort();
+            Console.WriteLine();
+            PrintList(listStr);
+
             Console.ReadKey();
         }
         public static void PrintList(MyList<int> list)
+        {
+            foreach (var item in list)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine($"\nCount: {list.Count} Capacity: {list.Capacity}");
+        }
+        public static void PrintList(MyList<string> list)
         {
             foreach (var item in list)
             {

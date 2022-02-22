@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Homework1.Interfaces
 {
-    public interface IMyList<in TEntity>
+    public interface IMyList<TEntity>
     {
         public void Add(TEntity entity);
         public void AddRange(params TEntity[] entities);

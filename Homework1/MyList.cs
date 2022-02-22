@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Homework1
 {
-    public class MyList<TEntity> : IMyList<TEntity>, IEnumerable<TEntity>
+    public class MyList<TEntity> : IMyList<TEntity>, IEnumerable<TEntity> where TEntity : IComparable<TEntity>
     {
         private const int MinCapacity = 10;
         private int capacity;
@@ -110,9 +110,9 @@ namespace Homework1
         {
             for (int i = 1; i < count; i++)
             {
-                dynamic key = entities[i];
+                TEntity key = entities[i];
                 int j = i;
-                while ((j > 0) && (entities[j - 1] > key))
+                while ((j > 0) && (entities[j - 1].CompareTo(key) == 1))
                 {
                     var temp = entities[j - 1];
                     entities[j - 1] = entities[j];
@@ -125,7 +125,7 @@ namespace Homework1
 
         public IEnumerator<TEntity> GetEnumerator()
         {
-            int counter = 1;
+            int counter = 0;
             foreach (var item in entities)
             {
                 if(counter == count)
