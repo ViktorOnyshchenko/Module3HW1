@@ -92,6 +92,7 @@ namespace Homework1
                 throw new ArgumentException("Index can't be less than one or greater than the number of elements!", nameof(index));
             }
             TEntity[] newEntities = new TEntity[capacity];
+            index--;
             for (int i = 0, j = 0; i < capacity; i++)
             {
                 if (i.Equals(index))
